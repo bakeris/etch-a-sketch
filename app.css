@@ -1,0 +1,15 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+}
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    background-color: white;
+    position: inherit;
+}
+.square {
+    border: solid 1px black;
+}
