@@ -1,15 +1,100 @@
 body {
-    min-height: 100vh;
+    height: auto;
     margin: 0;
+    background-image: url('/background.jpeg');
+    background-size:cover;
+    background-repeat: no-repeat;
+
 }
 .container {
-    height: 100vh;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#header {
+    width: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex: 2;
+}
+#content {
+    flex: 5;
+}
+#footer {
+    flex: 1;
+}
+#bottom {
+    flex: 1;
+}
+#mainContainer {
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
+    grid-template-columns:;
+    grid-template-rows:;
     background-color: white;
-    position: inherit;
+    height: 100%;
+    width: 60vh;
+    --borderWidth: 5px;
+    background: #1D1F20;
+    position: relative;
+    border-radius: var(--borderWidth)
 }
 .square {
-    border: solid 1px black;
+    border: solid 1px rgb(177, 98, 160);
 }
+
+#mainContainer:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+  }
+  :root {
+    --clr-neon: hsl(317 100% 54%);
+    --clr-bg: hsl(323 21% 16%)
+}
+
+  .neons {
+    font-size: 25px;
+    height: 60px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-family: "Balsamiq Sans", cursive;
+    text-decoration: none;
+    color: var(--clr-neon);
+    border: var(--clr-neon) 3px solid;
+    background-color: transparent;
+    border-radius: 0.25em;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+    transition: all 0.5s
+  }
+  .neons:hover {
+    background-color: var(--clr-neon);
+    color: #fff
+}
+
+    
+
+@keyframes animatedgradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
