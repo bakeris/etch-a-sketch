@@ -15,9 +15,7 @@ let defCol = 20
 let defRow = 20
 let defNum = defCol * defRow;
 for (let i=0; i<defNum; i++){
-    const square = document.createElement('div');
-    square.classList.add('square');
-    container.appendChild(square)
+    createSquare ()
     changeColor ()
 };
 
@@ -42,6 +40,12 @@ function restart () {
        restart[i].style.backgroundColor = 'black';
    }
 };
+// creates div's which are squares 
+function createSquare () {
+    const square = document.createElement('div');
+    square.classList.add('square');
+    container.appendChild(square)
+}
 
 // this is clear suqares function
 function clearSqr () {
@@ -52,20 +56,15 @@ function clearSqr () {
    }
    //function that creates new squares
     let sqrNum = prompt('Enter number of squares between 4-64')
-    if (sqrNum > 64 || sqrNum < 4 || Number.isNaN(sqrNum)) {
-        alert('Enter a number from 4-64 range')
-    } else {
-    let newNum = sqrNum * sqrNum
+    let newNum = Math.pow(sqrNum,2)
     for (let i=0; i<newNum; i++){
-    const square = document.createElement('div');
-    square.classList.add('square');
-    container.appendChild(square)
-    changeColor()
-};
+    createSquare()
+
 //gives square a color whwn mouse enters a square 
 let columns = container.style.setProperty('grid-template-columns', 'repeat(' + sqrNum + ', 1fr)');
 let rows = container.style.setProperty('grid-template-rows', 'repeat(' + sqrNum + ', 1fr)');
   };
+  changeColor()
 };
 
 // this is clear button with added function to add and remove squares
