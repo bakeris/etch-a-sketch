@@ -1,7 +1,7 @@
 body {
     height: auto;
     margin: 0;
-    background-image: url('https://bakeris.github.io/etch-a-sketch/background.jpeg');
+    background-image: url('./img/background.jpeg');
     background-size:cover;
     background-repeat: no-repeat;
 
